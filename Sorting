@@ -1,0 +1,43 @@
+
+#include <math.h>
+#include <stdio.h>
+
+
+void insertionSort(int a1[], int n)
+{
+	int i, k, j;
+	for (i = 1; i < n; i++) {
+		k = a1[i];
+		j = i - 1;
+
+		/* Move elements of arr[0..i-1], that are
+		greater than key, to one position ahead
+		of their current position */
+		while (j >= 0 && a1[j] > k) {
+			a1[j + 1] = a1[j];
+			j = j - 1;
+		}
+		a1[j + 1] = k;
+	}
+}
+
+// A utility function to print an array of size n
+void display(int a1[], int n)
+{
+	int i;
+	for (i = 0; i < n; i++)
+		printf("%d ", a1[i]);
+	printf("\n");
+}
+
+/* Driver program to test insertion sort */
+int main()
+{
+	int a1[] = { 3,4,7,8,5 };
+	int n = sizeof(a1) / sizeof(a1[0]);
+
+	insertionSort(a1, n);
+	display(a1, n);
+
+	return 0;
+}
