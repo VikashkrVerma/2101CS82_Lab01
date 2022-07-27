@@ -3,12 +3,16 @@
 
 int main()
 {
-   printf("Enter Two nos ");
+   printf("Enter original price ");
    int a,b;
-   scanf("%d%d",&a,&b);
-   int c = (a/b)*100;
+   scanf("%d",&a);
+   printf("Enter discount percent");
+    scanf("%d",&b);
+   
 
-      printf("Result is %d percent",c);
+   int c =(a-((b/100)*a));
+
+      printf("Result is %d ",c);
 
     return 0;
 }
